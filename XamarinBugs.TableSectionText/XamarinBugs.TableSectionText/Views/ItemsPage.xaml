@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinBugs.TableSectionText.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <Label Text="Label" x:Name="LabelExample"></Label>
+                    </ViewCell>
+                    <ViewCell>
+                        <Editor TextChanged="EditorTextChangedLabel" Unfocused="EditorUnfocused" MaxLength="{Binding MaxLenght}"/>
+                    </ViewCell>
+                </TableSection>
+                <TableSection x:Name="TableSectionExample" Title="TableSection">
+                    <ViewCell>
+                        <Editor TextChanged="EditorTextChangedTableSection" Unfocused="EditorUnfocused" MaxLength="{Binding MaxLenght}"/>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+    
+</ContentPage>
